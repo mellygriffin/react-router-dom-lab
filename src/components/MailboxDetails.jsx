@@ -1,12 +1,20 @@
 //MailboxDetails
+import { useParams } from 'react';
 
 const MailboxDetails = () => {
+
+    const { mailboxId } = useParams();
+    const selectedBox = props.mailbox.find(
+        (mailbox) => mailbox._id === Number(mailboxId)
+    )
+
     return (
-        <nav>
+        <>
+            <h2>`${selectedBox.boxholder}'s Mailbox`</h2>
             <ul>
-            <li>Details Here</li>
+                <li>Box Sixe:, {selectedBox.boxSize}</li>
             </ul>
-        </nav>
+        </>
     )
 }
 
