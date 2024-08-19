@@ -6,6 +6,8 @@ import NavBar from './components/NavBar';
 import MailboxList from './components/MailboxList';
 import MailboxForm from './components/MailboxForm';
 import MailboxDetails from './components/MailboxDetails';
+import './index.css';
+
 
 const App = () => {
 
@@ -20,10 +22,11 @@ const App = () => {
     <>
   <NavBar />
   <Routes>
-    <Route path="/" element={<h2>Post Office</h2>} />
-    <Route path='/mailboxes' element={<MailboxList />} />
+    <Route path="/" element={<h2>Welcome to the Post Office</h2>} />
+    <Route path='/mailboxes' element={<MailboxList mailboxes={mailboxes} />} />
     <Route path='/new-mailbox' element={<MailboxForm addMailbox={addMailbox}/>} />
-    <Route path='/mailboxes/:mailboxId' element={<MailboxDetails />} />
+    <Route path='/mailboxes/:mailboxId' element={<MailboxDetails mailboxes={mailboxes} />} />
+    <Route path="*" element={<h2>Whoops, nothing here!</h2>} />
   </Routes>
   </>
   );
