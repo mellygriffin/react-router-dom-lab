@@ -19,6 +19,13 @@ ul {
   list-style: none;
 }
 
+.mailboxlist {
+  display:inline-block;
+  border:1px solid #ffffff;
+  border-style: bold;
+  padding:20px;
+}
+
 .details {
   flex-direction: column;
 }
